@@ -1,0 +1,63 @@
+<!DOCTYPE html>	  
+<html>  
+<body> 
+ECHO is off.
+<br> 
+<div id="DivCurTime"></div> 
+<br> 
+<button onclick="getCurTime()" type="button">Get current time position</button>  
+<button onclick="setCurTime(0)" type="button">00</button><br>   
+<button onclick="moveMS(-0.05)" type="button">Time-50ms</button>  
+<button onclick="moveMS(-0.01)" type="button">-10ms</button>  
+<button onclick="moveMS(0.01)" type="button">+10ms</button>  
+<button onclick="moveMS(0.05)" type="button">+50ms</button>  
+<button onclick="setCurTime(5)" type="button">Set time position to 5 seconds</button><br>   
+<button onclick="play('AVSEQ01.mp4')">1:AVSEQ01.mp4</button> 
+<button onclick="play('AVSEQ02.mp4')">2:AVSEQ02.mp4</button> 
+<button onclick="play('AVSEQ03.mp4')">3:AVSEQ03.mp4</button> 
+<button onclick="play('AVSEQ04.mp4')">4:AVSEQ04.mp4</button> 
+<button onclick="play('AVSEQ05.mp4')">5:AVSEQ05.mp4</button> 
+<button onclick="play('AVSEQ06.mp4')">6:AVSEQ06.mp4</button> 
+<button onclick="play('AVSEQ07.mp4')">7:AVSEQ07.mp4</button> 
+<button onclick="play('AVSEQ08.mp4')">8:AVSEQ08.mp4</button> 
+<button onclick="play('AVSEQ09.mp4')">9:AVSEQ09.mp4</button> 
+<button onclick="play('AVSEQ10.mp4')">10:AVSEQ10.mp4</button> 
+<br> 
+<button onclick="play('AVSEQ11.mp4')">11:AVSEQ11.mp4</button> 
+<button onclick="play('AVSEQ12.mp4')">12:AVSEQ12.mp4</button> 
+<button onclick="play('AVSEQ13.mp4')">13:AVSEQ13.mp4</button> 
+<button onclick="play('AVSEQ14.mp4')">14:AVSEQ14.mp4</button> 
+<button onclick="play('AVSEQ15.mp4')">15:AVSEQ15.mp4</button> 
+<button onclick="play('AVSEQ16.mp4')">16:AVSEQ16.mp4</button> 
+<button onclick="play('AVSEQ17.mp4')">17:AVSEQ17.mp4</button> 
+<button onclick="play('AVSEQ18.mp4')">18:AVSEQ18.mp4</button> 
+<button onclick="play('AVSEQ19.mp4')">19:AVSEQ19.mp4</button> 
+<button onclick="play('AVSEQ20.mp4')">20:AVSEQ20.mp4</button> 
+<br> 
+<button onclick="play('AVSEQ21.mp4')">21:AVSEQ21.mp4</button> 
+<button onclick="play('AVSEQ22.mp4')">22:AVSEQ22.mp4</button> 
+<br> 
+<video id="myVideo" width="720" height="480" controls> 
+ <source src="0.mp4" type="video/mp4">  
+Your browser does not support HTML5 video. 
+</video>  
+<script>  
+var vid = document.getElementById("myVideo"); 
+function play(i) {
+    vid.src=i; 
+    vid.load();
+    vid.play(); 
+}
+function getCurTime() {  
+   document.getElementById("DivCurTime").innerHTML= vid.currentTime; 
+}   
+function setCurTime(t) { 
+   vid.currentTime=t;  
+   getCurTime();
+}  
+function moveMS(ms) { 
+  vid.currentTime+=ms;
+  getCurTime();  
+}   
+</script> 
+</body> 
